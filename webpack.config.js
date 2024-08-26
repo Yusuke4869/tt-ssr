@@ -6,19 +6,19 @@ module.exports = {
   target: "node",
   externals: [],
   entry: {
-    main: path.resolve(__dirname, "./src/main.ts"),
+    main: path.resolve(__dirname, "./src/main.tsx"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js"],
     modules: ["node_modules"],
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: [
           {
             loader: "babel-loader",
