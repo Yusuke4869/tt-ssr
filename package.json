@@ -5,9 +5,9 @@
   "license": "MIT",
   "author": "Yusuke4869",
   "scripts": {
-    "build": "rm -r dist && webpack",
+    "build": "rm -rf dist && webpack",
     "start": "node dist/main.js",
-    "lint": "eslint --fix src/**/*.ts && prettier --write .",
+    "lint": "eslint --fix src/**/*.tsx && prettier --write .",
     "format": "prettier --write .",
     "check": "eslint src/**/*.ts && prettier --check .",
     "prepare": "husky"

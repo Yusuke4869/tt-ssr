@@ -12,7 +12,7 @@ const config = tseslint.config(
     ignores: ["node_modules", "dist"],
   },
   {
-    files: ["**/*.js", "**/*.ts"],
+    files: ["**/*.js", "**/*.ts", "**/*.tsx"],
     languageOptions: {
       globals: { ...globals.node },
       ecmaVersion: "latest",
@@ -26,7 +26,7 @@ const config = tseslint.config(
         typescript: {},
       },
       "import/parsers": {
-        "@typescript-eslint/parser": [".js", ".ts"],
+        "@typescript-eslint/parser": [".js", ".ts", ".tsx"],
       },
     },
     plugins: {
