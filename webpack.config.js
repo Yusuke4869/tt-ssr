@@ -1,7 +1,37 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const path = require("path");
 
-module.exports = {
+const clientConfig = {
+  mode: "development",
+  target: "web",
+  entry: {
+    main: path.resolve(__dirname, "./src/app.tsx"),
+  },
+  output: {
+    path: path.resolve(__dirname, "dist/client"),
+  },
+  resolve: {
+    extensions: [".tsx"],
+    modules: ["node_modules"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: "babel-loader",
+          },
+          {
+            loader: "ts-loader",
+          },
+        ],
+      },
+    ],
+  },
+};
+
+const serverConfig = {
   mode: "development",
   target: "node",
   externals: [],
@@ -31,3 +61,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = [clientConfig, serverConfig];
