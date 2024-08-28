@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Yusuke4869</title>
+  <script src="/client/main.js" defer></script>
 </head>
 <body>
   <div id="root">${app}</div>
@@ -25,7 +26,7 @@ app.get("/", (req, res) => {
   res.send(html);
 });
 
-app.use(express.static("./dist"));
+app.use("/client", express.static("./dist/client"));
 
 try {
   app.listen(PORT, () => {
